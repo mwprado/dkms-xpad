@@ -1,12 +1,12 @@
-%global commit0 5376366886251e2f8f248704adb620a4bc4c0937
-%global date 20170410
+%global commit0 bbc8608755da42e7494c00dce24a636007972def
+%global date 20170915
 %global shortcommit0 %%(c=%%{commit0}; echo ${c:0:7})
 
 %global debug_package %{nil}
 %global dkms_name xpad
 
 Name:       dkms-%{dkms_name}
-Version:    4.11
+Version:    4.14
 Release:    1%{?snapshot:.%{snapshot}}%{?shortcommit0:.%{date}git%{shortcommit0}}%{?dist}
 Summary:    X-Box gamepad driver
 License:    GPLv2+
@@ -52,6 +52,9 @@ dkms remove -m %{dkms_name} -v %{version} -q --all || :
 %{_usrsrc}/%{dkms_name}-%{version}
 
 %changelog
+* Thu Sep 21 2017 Simone Caronni <negativo17@gmail.com> - 4.14-1.20170915gitbbc8608
+- Update to latest snapshot.
+
 * Sat Apr 15 2017 Simone Caronni <negativo17@gmail.com> - 4.11-1.20170410git5376366
 - Update to latest snapshot from the official kernel repository.
 
