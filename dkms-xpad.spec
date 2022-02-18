@@ -1,21 +1,19 @@
-%global commit0 94710cac0ef4ee177a63b5227664b38c95bbf703
-%global date 20170915
+%global date 20170918
 %global shortcommit0 %%(c=%%{commit0}; echo ${c:0:7})
 
 %global debug_package %{nil}
 %global dkms_name xpad
 
 Name:       dkms-%{dkms_name}
-Version:    4.18
-Release:    1%{?snapshot:.%{snapshot}}%{?shortcommit0:.%{date}git%{shortcommit0}}%{?dist}
+Version:    5.15.24
+Release:    1%{?dist}
 Summary:    X-Box gamepad driver
 License:    GPLv2+
 URL:        http://www.kernel.org/
 BuildArch:  x86_64
 
 # Source file:
-# https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/drivers/input/joystick/xpad.c
-Source0:    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/drivers/input/joystick/xpad.c?h=v%{Version}&id=%{commit0}#/xpad.c
+Source0:    https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/input/joystick/xpad.c?h=v5.15.24#/xpad.c
 Source1:    Makefile
 Source2:    dkms.conf
 
@@ -52,6 +50,9 @@ dkms remove -m %{dkms_name} -v %{version} -q --all || :
 %{_usrsrc}/%{dkms_name}-%{version}
 
 %changelog
+* Thu Feb 17 2022 Moacyr Prado <mwprado@yahoo.com> - 5.15.24
+- Update to latest stable 5.15.24 kernel version (commit a0ebea480bb319a3ad408c99db91262dbc696b76).
+
 * Thu Feb 17 2022 Moacyr Prado <mwprado@yahoo.com> - 4.18
 - Update to latest 4.18 snapshot kernel version.
 
