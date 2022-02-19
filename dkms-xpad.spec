@@ -5,7 +5,20 @@
 %global dkms_name xpad
 
 Name:       dkms-%{dkms_name}
+# Source file:
+%if %{el#}=7 
+Version:    3.10.0
+%endif
+
+%if %{el#}=8
+Version:    4.18.0
+%endif
+
+%if %{el9}=9
 Version:    5.15.24
+%endif
+
+
 Release:    1%{?dist}
 Summary:    X-Box gamepad driver
 License:    GPLv2+
@@ -13,7 +26,9 @@ URL:        http://www.kernel.org/
 BuildArch:  x86_64
 
 # Source file:
-Source0:    https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/input/joystick/xpad.c?h=v5.15.24#/xpad.c
+%if %{el#}=7 
+Source0:    https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/input/joystick/xpad.c?h=v{Version}#/xpad.c
+%endif
 Source1:    Makefile
 Source2:    dkms.conf
 
