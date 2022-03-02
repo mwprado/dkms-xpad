@@ -13,7 +13,7 @@ BuildArch:  x86_64
 
 # Source file:
 
-Source0:    https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/input/joystick/xpad.c?h=v5.14.0#/xpad.c
+Source0:    https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/input/joystick/xpad.c?h=v5.15.26#/xpad.c
 Source1:    Makefile
 Source2:    dkms.conf
 
