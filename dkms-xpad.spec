@@ -1,12 +1,10 @@
 %global date 20210303
-%global shortcommit0 %%(c=%%{commit0}; echo ${c:0:7})
-
 %global debug_package %{nil}
 %global dkms_name xpad
 
 Name:       dkms-%{dkms_name}
 Version:    4.18
-Release:    -1%{?snapshot:.%{snapshot}}%{?shortcommit0:.%{date}git%{shortcommit0}}%{?dist}
+Release:    1%{?dist}
 Summary:    X-Box gamepad driver
 License:    GPLv2+
 URL:        http://www.kernel.org/
