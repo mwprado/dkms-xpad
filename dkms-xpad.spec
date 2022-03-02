@@ -1,4 +1,4 @@
-%global date 20170918
+%global date 20210303
 %global shortcommit0 %%(c=%%{commit0}; echo ${c:0:7})
 
 %global debug_package %{nil}
