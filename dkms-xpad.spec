@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 %global dkms_name xpad
 
-Name:       dkms-%{dkms_name}
+Name:       kmod-%{dkms_name}-dkms
 Version:    4.18
 Release:    1%{?dist}
 Summary:    X-Box gamepad driver
