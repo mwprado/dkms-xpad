@@ -1,5 +1,4 @@
-%global commit0 94710cac0ef4ee177a63b5227664b38c95bbf703
-%global date 20170915
+%global date 20210303
 %global shortcommit0 %%(c=%%{commit0}; echo ${c:0:7})
 
 %global debug_package %{nil}
@@ -7,7 +6,7 @@
 
 Name:       dkms-%{dkms_name}
 Version:    4.18
-Release:    1%{?snapshot:.%{snapshot}}%{?shortcommit0:.%{date}git%{shortcommit0}}%{?dist}
+Release:    -1%{?snapshot:.%{snapshot}}%{?shortcommit0:.%{date}git%{shortcommit0}}%{?dist}
 Summary:    X-Box gamepad driver
 License:    GPLv2+
 URL:        http://www.kernel.org/
@@ -15,7 +14,7 @@ BuildArch:  x86_64
 
 # Source file:
 # https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/drivers/input/joystick/xpad.c
-Source0:    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/drivers/input/joystick/xpad.c?h=v%{Version}&id=%{commit0}#/xpad.c
+Source0:    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/drivers/input/joystick/xpad.c?h=v%{Version}#/xpad.c
 Source1:    Makefile
 Source2:    dkms.conf
 
